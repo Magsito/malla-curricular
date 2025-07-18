@@ -1,8 +1,54 @@
-document.querySelectorAll(".course").forEach(course => {
-  course.addEventListener("click", () => {
-    const estados = ["pendiente", "cursando", "completado"];
-    let actual = estados.indexOf(course.dataset.estado);
-    let siguiente = (actual + 1) % estados.length;
-    course.dataset.estado = estados[siguiente];
+const estados = ["pendiente", "desbloqueado", "cursando", "completado"];
+
+// Cargar progreso desde localStorage
+function cargarProgreso() {
+  const guardado = JSON.parse(localStorage.getItem("progresoMalla") || "{}");
+  document.querySelectorAll(".course").forEach(curso => {
+    const id = curso.dataset.id;
+    if (guardado[id]) {
+      curso.dataset.estado = guardado[id];
+    }
   });
+}
+
+// Guardar progreso actual en localStorage
+function guardarProgreso() {
+  const progreso = {};
+  document.querySelectorAll(".course").forEach(curso => {
+    progreso[curso.dataset.id] = curso.dataset.estado;
+  });
+  localStorage.setItem("progresoMalla", JSON.stringify(progreso));
+}
+
+function actualizarDesbloqueos() {
+  const cursos = document.querySelectorAll(".course");
+  cursos.forEach(curso => {
+    const prereq = curso.dataset.prereq;
+    if (!prereq || curso.dataset.estado === "completado") return;
+
+    const requisitos = prereq.split(",");
+    const cumplidos = requisitos.every(id => {
+      const previo = document.querySelector(`.course[data-id='${id}']`);
+      return previo && previo.dataset.estado === "completado";
+    });
+
+    if (cumplidos && curso.dataset.estado === "pendiente") {
+      curso.dataset.estado = "desbloqueado";
+    }
+  });
+}
+
+document.querySelectorAll(".course").forEach(curso => {
+  curso.addEventListener("click", () => {
+    const actual = estados.indexOf(curso.dataset.estado);
+    let siguiente = (actual + 1) % estados.length;
+    curso.dataset.estado = estados[siguiente];
+    actualizarDesbloqueos();
+    guardarProgreso();
+  });
+});
+
+window.addEventListener("load", () => {
+  cargarProgreso();
+  actualizarDesbloqueos();
 });
