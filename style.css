@@ -28,11 +28,11 @@ h1 {
   transition: background 0.3s, border 0.3s;
 }
 
-/* Estados visuales */
-.course[data-estado="pendiente"]     { background-color: #fff3cd; }
-.course[data-estado="desbloqueado"]  { background-color: #e0f0ff; border: 2px dashed #007bff; }
-.course[data-estado="cursando"]      { background-color: #cfe2ff; }
-.course[data-estado="completado"]    { background-color: #d4edda; }
+/* Colores por estado */
+.course[data-estado="pendiente"]     { background-color: #fef7dc; color: #666; }
+.course[data-estado="desbloqueado"]  { background-color: #e0f0ff; border: 2px dashed #007bff; color: #000; }
+.course[data-estado="cursando"]      { background-color: #cfe2ff; color: #000; }
+.course[data-estado="completado"]    { background-color: #d4edda; color: #000; }
 
 .legend {
   display: flex;
@@ -47,7 +47,7 @@ h1 {
   font-size: 0.9em;
 }
 
-.legend-item.pendiente     { background: #fff3cd; }
+.legend-item.pendiente     { background: #fef7dc; }
 .legend-item.desbloqueado  { background: #e0f0ff; border: 1px dashed #007bff; }
 .legend-item.cursando      { background: #cfe2ff; }
 .legend-item.completado    { background: #d4edda; }
