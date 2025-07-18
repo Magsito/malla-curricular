@@ -42,15 +42,16 @@ h1 {
 }
 
 .course {
-  background: #fff;
+  background: rgba(255, 255, 255, 0.8); /* blanco semitransparente */
   padding: 16px;
   border-radius: 12px;
   text-align: center;
   font-weight: 500;
   cursor: pointer;
   transition: all 0.3s ease;
-  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.15);
   border: 2px solid transparent;
+  backdrop-filter: blur(4px); /* mejora el contraste con fondo */
 }
 
 .course[data-estado="pendiente"] {
@@ -76,7 +77,7 @@ h1 {
 }
 
 .course:hover {
-  transform: translateY(-3px);
+  transform: scale(1.02);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
 
