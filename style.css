@@ -3,11 +3,9 @@ body {
   background-size: cover;
   background-repeat: repeat;
   background-position: center;
-}
 
-body {
   font-family: 'Segoe UI', sans-serif;
-  background: #f7f7f7;
+  background-color: #f7f7f7; /* Color de respaldo si la imagen no carga */
   padding: 20px;
 }
 
