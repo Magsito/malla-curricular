@@ -81,3 +81,53 @@ h1 {
   50% { border-color: #5dade2; }
   100% { border-color: #3498db; }
 }
+
+/* Centrado del contenido principal */
+#mallacontainer {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Separación visual entre ciclos */
+.ciclo-title {
+  font-weight: bold;
+  font-size: 16px;
+  margin-top: 40px;
+  margin-bottom: 10px;
+}
+
+/* Mejora de leyenda */
+.legend {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.legend-item {
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: 13px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+/* Colores que coinciden con los cursos */
+.legend-item.pendiente {
+  background-color: #fff3cd;
+  color: #856404;
+}
+.legend-item.desbloqueado {
+  background-color: #e8f4fd;
+  color: #004085;
+  border: 2px dashed #3498db;
+}
+.legend-item.cursando {
+  background-color: #f3e5f5;
+  color: #6a1b9a;
+}
+.legend-item.completado {
+  background-color: #d4edda;
+  color: #155724;
+}
