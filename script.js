@@ -28,16 +28,18 @@ function actualizarDesbloqueos() {
     if (!prereq) return;
 
     const requisitos = prereq.split(",");
-    const cumplidos = requisitos.every(id => {
-      const previo = document.querySelector(`.course[data-id='${id}']`);
+    const todosCumplidos = requisitos.every(id => {
+      const previo = document.querySelector(`.course[data-id="${id}"]`);
       return previo && previo.dataset.estado === "completado";
     });
 
-    if (cumplidos && curso.dataset.estado === "pendiente") {
+    // Si se cumplen y el curso está pendiente → desbloquear
+    if (todosCumplidos && curso.dataset.estado === "pendiente") {
       curso.dataset.estado = "desbloqueado";
     }
 
-    if (!cumplidos && curso.dataset.estado === "desbloqueado") {
+    // Si NO se cumplen y el curso estaba desbloqueado → volver a pendiente
+    if (!todosCumplidos && curso.dataset.estado === "desbloqueado") {
       curso.dataset.estado = "pendiente";
     }
   });
