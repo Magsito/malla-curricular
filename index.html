@@ -7,12 +7,118 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <h1>Malla Curricular - [Tu Carrera]</h1>
-  <div class="grid">
-    <div class="course" data-estado="pendiente">Matemática I</div>
-    <div class="course" data-estado="completado">Programación I</div>
-    <div class="course" data-estado="cursando">Física I</div>
+  <h1>Malla Curricular - Administración y Negocios Internacionales</h1>
+
+  <div class="legend">
+    <span class="legend-item pendiente">Pendiente</span>
+    <span class="legend-item desbloqueado">Desbloqueado</span>
+    <span class="legend-item cursando">Cursando</span>
+    <span class="legend-item completado">Completado</span>
   </div>
-  <script src="script.js"></script>
-</body>
-</html>
+
+  <div id="malla">
+
+  <div class="ciclo-title">Ciclo 1</div>
+  <div class="grid">
+    <div class="course" data-id="HU625" data-estado="pendiente">Comprensión y Producción de Lenguaje I</div>
+    <div class="course" data-id="HU548" data-estado="pendiente">Ética y Ciudadanía</div>
+    <div class="course" data-id="MA384" data-estado="pendiente">Fundamentos para el Cálculo</div>
+    <div class="course" data-id="AN173" data-estado="pendiente">International Management</div>
+    <div class="course" data-id="AN172" data-estado="pendiente">Introduction to International Business</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 2</div>
+  <div class="grid">
+    <div class="course" data-id="MA459" data-prereq="MA384" data-estado="pendiente">Cálculo</div>
+    <div class="course" data-id="HU626" data-prereq="HU625" data-estado="pendiente">Comprensión y Producción de Lenguaje II</div>
+    <div class="course" data-id="AF103" data-estado="pendiente">Fundamentos de las Finanzas</div>
+    <div class="course" data-id="AN97" data-prereq="AN172" data-estado="pendiente">Inteligencia Comercial Internacional</div>
+    <div class="course" data-id="AF133" data-prereq="AN173,MA384" data-estado="pendiente">Macroeconomía</div>
+    <div class="course" data-id="AN174" data-prereq="AN173" data-estado="pendiente">Mundo empresarial y realidad socioeconómica</div>
+    <div class="course" data-id="Electivo1" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 3</div>
+  <div class="grid">
+    <div class="course" data-id="MA460" data-prereq="MA459" data-estado="pendiente">Estadística Descriptiva</div>
+    <div class="course" data-id="HU318" data-prereq="HU626" data-estado="pendiente">Fundamentos de la Investigación Académica</div>
+    <div class="course" data-id="AN175" data-prereq="AN172" data-estado="pendiente">International Business</div>
+    <div class="course" data-id="CA142" data-prereq="AF103" data-estado="pendiente">Introducción a la Contabilidad Financiera</div>
+    <div class="course" data-id="AF141" data-prereq="AF103" data-estado="pendiente">Matemática Financiera</div>
+    <div class="course" data-id="AF142" data-prereq="MA384,AF133" data-estado="pendiente">Teoría Microeconómica</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 4</div>
+  <div class="grid">
+    <div class="course" data-id="MA461" data-prereq="MA460" data-estado="pendiente">Estadística Inferencial</div>
+    <div class="course" data-id="AN22" data-prereq="AN172,AF142" data-estado="pendiente">Comercio Internacional</div>
+    <div class="course" data-id="AF140" data-prereq="CA142,AF141" data-estado="pendiente">Finanzas Corporativas</div>
+    <div class="course" data-id="AN176" data-prereq="AN174,AN175" data-estado="pendiente">International Economy</div>
+    <div class="course" data-id="CA143" data-prereq="CA142" data-estado="pendiente">Introducción a la Contabilidad Gerencial</div>
+    <div class="course" data-id="AM75" data-prereq="AF142" data-estado="pendiente">Marketing</div>
+    <div class="course" data-id="Electivo2" data-estado="pendiente">Electivo</div>
+  </div>
+    
+  <div class="ciclo-title">Ciclo 5</div>
+  <div class="grid">
+    <div class="course" data-id="MA368" data-prereq="MA460" data-estado="pendiente">Métodos Cuantitativos</div>
+    <div class="course" data-id="AN20" data-prereq="AN22" data-estado="pendiente">Aduanas</div>
+    <div class="course" data-id="AD170" data-prereq="AN172" data-estado="pendiente">Diseño Organizacional y Procesos</div>
+    <div class="course" data-id="AH87" data-prereq="AN173" data-estado="pendiente">Gestión del Capital Humano Global</div>
+    <div class="course" data-id="AN79" data-prereq="AN22,AN97,AM75" data-estado="pendiente">Plan Comercial Internacional</div>
+    <div class="course" data-id="Electivo3" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 6</div>
+  <div class="grid">
+    <div class="course" data-id="AD213" data-prereq="MA368" data-estado="pendiente">Administración de Operaciones</div>
+    <div class="course" data-id="CA177" data-prereq="CA143" data-estado="pendiente">Análisis e Interpretación de EE.FF.</div>
+    <div class="course" data-id="AN96" data-prereq="AN22,AN79" data-estado="pendiente">Costos y Cotizaciones Internacionales</div>
+    <div class="course" data-id="DE965" data-prereq="AN20" data-estado="pendiente">Derecho Empresarial y de Comercio Internacional</div>
+    <div class="course" data-id="AD180" data-prereq="AH87,AM75" data-estado="pendiente">Grandes Ideas en Gerencia</div>
+    <div class="course" data-id="Electivo4" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 7</div>
+  <div class="grid">
+    <div class="course" data-id="AH14" data-prereq="AH87" data-estado="pendiente">Comportamiento Organizacional</div>
+    <div class="course" data-id="AD2508" data-estado="pendiente">Comunicación para el Liderazgo</div>
+    <div class="course" data-id="AN58" data-prereq="AN79" data-estado="pendiente">E-Commerce</div>
+    <div class="course" data-id="AF176" data-prereq="AF140" data-estado="pendiente">Evaluación de Proyectos de Inversión Privada</div>
+    <div class="course" data-id="AM233" data-prereq="AM75,MA461" data-estado="pendiente">Investigación de Mercado aplicada a los Negocios</div>
+    <div class="course" data-id="Electivo5" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 8</div>
+  <div class="grid">
+    <div class="course" data-id="AD2454" data-prereq="AD213" data-estado="pendiente">Gestión de Proyectos</div>
+    <div class="course" data-id="AN80" data-prereq="DE965" data-estado="pendiente">Integración Económica Internacional</div>
+    <div class="course" data-id="AN48" data-prereq="AN96,AF140" data-estado="pendiente">Operaciones Financieras Internacionales</div>
+    <div class="course" data-id="AD2506" data-prereq="AD213" data-estado="pendiente">Sistemas de Información en Ent. Digitales</div>
+    <div class="course" data-id="AN81" data-prereq="AN22,AN79" data-estado="pendiente">Transporte Global</div>
+    <div class="course" data-id="Electivo6" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 9</div>
+  <div class="grid">
+    <div class="course" data-id="AN84" data-prereq="AN96,AN58,AF176,AM233,AN81" data-estado="pendiente">Desarrollo de Proyectos Internacionales</div>
+    <div class="course" data-id="AN82" data-prereq="AN96,AN80,AN79" data-estado="pendiente">Gerencia Comercial Multinacional</div>
+    <div class="course" data-id="AD2509" data-estado="pendiente">Gerencia Estratégica en Org. Conscientes</div>
+    <div class="course" data-id="AN85" data-estado="pendiente">International Supply Chain Management</div>
+    <div class="course" data-id="AD2507" data-estado="pendiente">Metodología de la Investigación</div>
+    <div class="course" data-id="Electivo7" data-estado="pendiente">Electivo</div>
+    <div class="course" data-id="Electivo8" data-estado="pendiente">Electivo</div>
+  </div>
+
+  <div class="ciclo-title">Ciclo 10</div>
+  <div class="grid">
+    <div class="course" data-id="AN178" data-estado="pendiente">Coyuntura Internacional</div>
+    <div class="course" data-id="AN177" data-prereq="AD2507" data-estado="pendiente">Seminario de Tesis</div>
+    <div class="course" data-id="AN86" data-estado="pendiente">Dirección Multinacional</div>
+    <div class="course" data-id="AH45" data-estado="pendiente">Ética y Responsabilidad Social Empresarial</div>
+    <div class="course" data-id="Electivo9" data-estado="pendiente">Electivo</div>
+    <div class="course" data-id="Electivo10" data-estado="pendiente">Electivo</div>
+  </div>
+
+</div>
+
