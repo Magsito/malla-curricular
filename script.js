@@ -22,9 +22,10 @@ function guardarProgreso() {
 
 function actualizarDesbloqueos() {
   const cursos = document.querySelectorAll(".course");
+
   cursos.forEach(curso => {
     const prereq = curso.dataset.prereq;
-    if (!prereq || curso.dataset.estado === "completado") return;
+    if (!prereq) return;
 
     const requisitos = prereq.split(",");
     const cumplidos = requisitos.every(id => {
@@ -34,6 +35,10 @@ function actualizarDesbloqueos() {
 
     if (cumplidos && curso.dataset.estado === "pendiente") {
       curso.dataset.estado = "desbloqueado";
+    }
+
+    if (!cumplidos && curso.dataset.estado === "desbloqueado") {
+      curso.dataset.estado = "pendiente";
     }
   });
 }
