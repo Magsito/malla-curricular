@@ -1,53 +1,83 @@
 body {
-  font-family: sans-serif;
-  background: #f9f9f9;
+  font-family: 'Segoe UI', sans-serif;
+  background: #f7f7f7;
   padding: 20px;
 }
 
 h1 {
   text-align: center;
+  margin-bottom: 30px;
+  color: #333;
 }
-
-.ciclo-title {
-  font-weight: bold;
-  margin: 20px 0 10px;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 10px;
-}
-
-.course {
-  padding: 10px;
-  border-radius: 6px;
-  text-align: center;
-  cursor: pointer;
-  border: 2px solid #ccc;
-  transition: background 0.3s, border 0.3s;
-}
-
-/* Colores por estado */
-.course[data-estado="pendiente"]     { background-color: #fef7dc; color: #666; }
-.course[data-estado="desbloqueado"]  { background-color: #e0f0ff; border: 2px dashed #007bff; color: #000; }
-.course[data-estado="cursando"]      { background-color: #cfe2ff; color: #000; }
-.course[data-estado="completado"]    { background-color: #d4edda; color: #000; }
 
 .legend {
   display: flex;
   justify-content: center;
-  margin-bottom: 10px;
-  gap: 10px;
+  gap: 20px;
+  margin-bottom: 20px;
 }
 
 .legend-item {
-  padding: 5px 10px;
-  border-radius: 4px;
-  font-size: 0.9em;
+  font-weight: bold;
+  padding: 5px 12px;
+  border-radius: 20px;
+  color: #fff;
 }
 
-.legend-item.pendiente     { background: #fef7dc; }
-.legend-item.desbloqueado  { background: #e0f0ff; border: 1px dashed #007bff; }
-.legend-item.cursando      { background: #cfe2ff; }
-.legend-item.completado    { background: #d4edda; }
+.pendiente { background-color: #f39c12; }         /* naranja */
+.desbloqueado { background-color: #3498db; }      /* azul */
+.cursando { background-color: #9b59b6; }          /* morado */
+.completado { background-color: #2ecc71; }        /* verde */
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 15px;
+  margin-bottom: 40px;
+}
+
+.course {
+  background: #fff;
+  padding: 16px;
+  border-radius: 12px;
+  text-align: center;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+  border: 2px solid transparent;
+}
+
+.course[data-estado="pendiente"] {
+  background-color: #fff3cd;
+  color: #856404;
+}
+
+.course[data-estado="desbloqueado"] {
+  background-color: #e8f4fd;
+  color: #004085;
+  border: 2px dashed #3498db;
+  animation: pulse 1.5s infinite;
+}
+
+.course[data-estado="cursando"] {
+  background-color: #f3e5f5;
+  color: #6a1b9a;
+}
+
+.course[data-estado="completado"] {
+  background-color: #d4edda;
+  color: #155724;
+}
+
+.course:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Animación para desbloqueado */
+@keyframes pulse {
+  0% { border-color: #3498db; }
+  50% { border-color: #5dade2; }
+  100% { border-color: #3498db; }
+}
