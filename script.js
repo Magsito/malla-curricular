@@ -52,3 +52,13 @@ window.addEventListener("load", () => {
   cargarProgreso();
   actualizarDesbloqueos();
 });
+
+function reiniciarMalla() {
+  if (confirm("¿Estás seguro de que quieres reiniciar toda la malla?")) {
+    localStorage.removeItem("progresoMalla");
+    document.querySelectorAll(".course").forEach(curso => {
+      curso.dataset.estado = "pendiente";
+    });
+    actualizarDesbloqueos();
+  }
+}
