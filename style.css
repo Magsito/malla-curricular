@@ -1,4 +1,11 @@
 body {
+  background-image: url('13756403_5349986.jpg');
+  background-size: cover;
+  background-repeat: repeat;
+  background-position: center;
+}
+
+body {
   font-family: 'Segoe UI', sans-serif;
   background: #f7f7f7;
   padding: 20px;
