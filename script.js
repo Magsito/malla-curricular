@@ -52,12 +52,14 @@ document.querySelectorAll(".course").forEach(curso => {
     curso.dataset.estado = estados[siguiente];
     actualizarDesbloqueos();
     guardarProgreso();
+    actualizarProgreso(); // ✅ Aquí
   });
 });
 
 window.addEventListener("load", () => {
   cargarProgreso();
   actualizarDesbloqueos();
+  actualizarProgreso(); // ✅ Aquí
 });
 
 function reiniciarMalla() {
@@ -67,5 +69,12 @@ function reiniciarMalla() {
       curso.dataset.estado = "pendiente";
     });
     actualizarDesbloqueos();
+    actualizarProgreso(); // ✅ Aquí
   }
+}
+
+function actualizarProgreso() {
+  const total = document.querySelectorAll(".course").length;
+  const completados = document.querySelectorAll('.course[data-estado="completado"]').length;
+  document.getElementById("progreso").innerText = `Completados: ${completados} de ${total}`;
 }
