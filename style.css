@@ -1,23 +1,53 @@
 body {
   font-family: sans-serif;
-  background: #f4f4f4;
+  background: #f9f9f9;
   padding: 20px;
+}
+
+h1 {
+  text-align: center;
+}
+
+.ciclo-title {
+  font-weight: bold;
+  margin: 20px 0 10px;
 }
 
 .grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
   gap: 10px;
 }
 
 .course {
   padding: 10px;
+  border-radius: 6px;
   text-align: center;
-  border-radius: 5px;
   cursor: pointer;
-  border: 1px solid #ccc;
+  border: 2px solid #ccc;
+  transition: background 0.3s, border 0.3s;
 }
 
-.course[data-estado="pendiente"] { background: #fff3cd; }
-.course[data-estado="cursando"] { background: #d1ecf1; }
-.course[data-estado="completado"] { background: #d4edda; }
+/* Estados visuales */
+.course[data-estado="pendiente"]     { background-color: #fff3cd; }
+.course[data-estado="desbloqueado"]  { background-color: #e0f0ff; border: 2px dashed #007bff; }
+.course[data-estado="cursando"]      { background-color: #cfe2ff; }
+.course[data-estado="completado"]    { background-color: #d4edda; }
+
+.legend {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+  gap: 10px;
+}
+
+.legend-item {
+  padding: 5px 10px;
+  border-radius: 4px;
+  font-size: 0.9em;
+}
+
+.legend-item.pendiente     { background: #fff3cd; }
+.legend-item.desbloqueado  { background: #e0f0ff; border: 1px dashed #007bff; }
+.legend-item.cursando      { background: #cfe2ff; }
+.legend-item.completado    { background: #d4edda; }
